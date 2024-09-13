@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Ui</title>
+    <link rel="icon" href="favicon.jpg">
+    <link rel="stylesheet" href="clinic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="clinical-ui-container">
+
+        <nav>
+            <div class="nav-bar">
+                <ul>
+                    <li class="logo">
+                        <img src="docGoo-Logo.png" alt="Logo" class="logo-img">
+                    </li>
+                    <li><a href="">Dashboard</a></li>
+                    <li><a href="">Patient Records</a></li>
+                    <li><a href="">Messaging Notify</a></li>
+                    <li><a href="">Bill Payments</a></li>
+                    <li><a href="">Appointment Management</a></li>
+                    <li><a href="">Reports Analytics</a></li>
+                    <li><a href="">Availability Management</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn"><i class="fas fa-bars"></i>Menu</a>
+                        <div class="dropdown-content">
+                          <a href="#"><i class="fas fa-info-circle"></i>Profile</a>
+                          <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                          <a href="../Create-Login-Folder/login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                      </li>
+                      
+                </ul>
+            </div>
+        </nav>
+
+ 
+        <!-- Mobile content -->
+
+        <div class="mobile-content">
+            
+            <div class="menu-bar">
+                
+                <div class="icons">
+                   <a href="#"><i class="fa fa-bell"></i></a>
+                   <a href="#"><i class="fa fa-cog"></i></a>
+                   <a href="#"><i class="fa fa-bars"></i></a> 
+                   
+                   <div class="menu-items">
+                       <div class="icons">
+                           <a href="#"><i class="fas fa-calendar-check"></i><span>Appointment Management</span></a>
+                           <a href="#"><i class="fas fa-chart-bar"></i><span>Report Analytics</span></a>
+                           <a href="#"><i class="fas fa-clock"></i>Availability Management</a>
+                           <a href="../Create-Login-Folder/LoginBoth/login.html"><i class="fa fa-sign-out"></i> <span>Logout</span></a>
+                       </div>
+                  </div>
+
+               </div>    
+            </div>
+            
+            
+            <div class="mobile-nav">
+                <ul>
+                <li><a href="#"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-file-medical-alt"></i>Patient Records</a></li>
+                <li><a href="#"><i class="fas fa-file-invoice-dollar"></i>Bill Payments</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+                </ul>
+            </div>
+            
+
+        </div>
+
+
+
+
+        
+        <div class="content">
+
+            <!-- Info Panel-->
+
+            <div class="info-panel">
+
+                  <!-- Inspirational stories Card -->
+            <div class="card">
+                <img src="Images/inspirational Stories.png" alt="Inspirational-stories" class="card-image">
+                <h3>Inspirational Stories</h3>
+                <p>Read inspiring patient recovery stories and doctor achievements that highlight courage, 
+                    resilience, and the power of exceptional care.</p>
+                <button id="isButton" onclick="location.href='#'">Read Stories</button>
+             </div>
+
+                
+                <!-- Events & Webinars Card -->
+                <div class="card">
+                    <img src="Images/Events Webinar.png" alt="Event Webinar" class="card-image">
+                    <h3>Events & Webinars</h3>
+                    <p>Stay updated with upcoming medical conferences, training sessions,
+                         and webinars to enhance your knowledge and skills.</p>
+                    <button id="ewButton" onclick="location.href='#'">View Events</button>
+                </div>
+
+                <!-- Regulatory Updates Card -->
+                <div class="card">
+                    <img src="Images/Updates.png" alt="Regulatory Updates" class="card-image">
+                    <h3>Regulatory Updates</h3>
+                    <p>Stay informed about the latest healthcare regulations, policy changes
+                        , and compliance requirements that impact your practice.</p>
+                    <button id="ruButton" onclick="location.href='#'">View Updates</button>
+                </div>
+                
+                
+                
+                
+            </div>
+            
+
+
+
+
+
+
+        
+    </div>
+
+
+<script src="clinicScript.js"></script>    
+</body>
+</html>

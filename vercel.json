@@ -1,0 +1,29 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "mainPage/main.html",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "Auth-Folder/auth.html",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "Clinical-Ui/createClinical.html",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "Patient-Ui/createPatient.html",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      { "src": "/main", "dest": "/mainPage/main.html" },
+      { "src": "/auth", "dest": "/Auth-Folder/auth.html" },
+      { "src": "/create-clinical", "dest": "/Clinical-Ui/createClinical.html" },
+      { "src": "/create-patient", "dest": "/Patient-Ui/createPatient.html" },
+      { "src": "/(.*)", "dest": "/mainPage/main.html" }
+    ]
+  }
+  

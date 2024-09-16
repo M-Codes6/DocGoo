@@ -95,7 +95,7 @@ button[type="submit"] {
     color: white;
     border: none;
     border-radius: 40px;
-    padding: 10px 10px;
+    padding: 10px 30px;
 }
 
 .box button[type="submit"]:hover {

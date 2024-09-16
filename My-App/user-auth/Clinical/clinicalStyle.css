@@ -81,7 +81,7 @@ body {
 }
 
 .box button {
-    margin: 30px;
+    margin: 20px;
     border: none;
     color: white;
     font-size: 16px;
@@ -95,7 +95,7 @@ button[type="submit"] {
     color: white;
     border: none;
     border-radius: 40px;
-    padding: 10px 30px;
+    padding: 10px 10px;
 }
 
 .box button[type="submit"]:hover {

@@ -62,7 +62,7 @@ body {
 .box input[type="email"],
 .box input[type="password"],
 .box input[type="number"] {
-    width: 100%;
+/*     width: 100%; */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -81,7 +81,7 @@ body {
 }
 
 .box button {
-    margin: 40px;
+/*     margin: 40px; */
     border: none;
     color: white;
     font-size: 16px;

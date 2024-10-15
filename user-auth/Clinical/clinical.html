@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocGoo | Clinic Registration</title>
+    <link rel="icon" href="favicon.jpg">
+    <link rel="stylesheet" href="clinicalStyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <form id="clinic-register-form">
+                <label for="clinic-name">Name of Clinic<span class="required">*</span></label>
+                <input type="text" id="clinic-name" name="name" placeholder="Enter here" required>
+
+                <label for="registration">Registration no. of Clinic<span class="required">*</span></label>
+                <input type="text" id="registration" name="registration" placeholder="Enter here" required>
+
+                <label for="clinic-address">Address of Clinic<span class="required">*</span></label>
+                <input type="text" id="clinic-address" name="address" placeholder="Enter here" required>
+
+                <label for="timing">Timing of Clinic<span class="required">*</span></label>
+                <input type="text" id="timing" name="timing" placeholder="Enter here" required>
+
+                <label for="doctors">Doctors Available<span class="required">*</span></label>
+                <input type="text" id="doctors" name="doctors" placeholder="Enter here" required>
+
+                <label for="clinic-email">Email Address<span class="required">*</span></label>
+                <input type="email" id="clinic-email" name="email" placeholder="Enter here" required>
+
+                <label for="clinic-phone">Phone no.<span class="required">*</span></label>
+                <input type="number" id="clinic-phone" name="number" placeholder="Enter here" required>
+
+                <label for="clinic-password">Create Password<span class="required">*</span></label>
+                <span>
+                    <input type="password" id="clinic-password" name="password" placeholder="Enter here" required>
+                    <input type="checkbox" id="showPassword"> 
+                </span>
+
+                <button type="submit">Create Account</button>
+                <a href="../LoginBoth/login.html"><button type="button">Log in</button></a>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="clinicalScript.js"></script>
+</body>
+</html>

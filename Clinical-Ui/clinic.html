@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocGoo | Clinic Panel</title>
+    <link rel="icon" href="favicon.jpg">
+    <link rel="stylesheet" href="clinic.css">
+    <link rel="stylesheet" href="components/dashboard/dashboard.css">
+    <link rel="stylesheet" href="components/patient/patient.css">
+    <link rel="stylesheet" href="components/message/message.css">
+    <link rel="stylesheet" href="components/bill/bill.css">
+    <link rel="stylesheet" href="components/appointment/appoinment.css">
+    <link rel="stylesheet" href="components/reportAnalytics/report.css">
+    <link rel="stylesheet" href="components/availability/availability.css">
+    <link rel="stylesheet" href="components/profile/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="clinical-ui-container">
+
+        <nav>
+            <div  class="nav-bar">
+                <ul>
+                    <li class="logo">
+                        <img src="docGoo-Logo.png" alt="Logo" class="logo-img">
+                    </li>
+                    <li onclick="loadPage('components/dashboard/dashboard.html', 'components/dashboard/dashboard.css')"><a href="javascript:void(0)">Dashboard</a></li>
+                    <li onclick="loadPage('components/patient/patient.html', 'components/patient/patient.css')"><a href="javascript:void(0)">Patient Records</a></li>
+                    <li onclick="loadPage('components/message/message.html', 'components/message/message.css')"><a href="javascript:void(0)">Messaging Notify</a></li>
+                    <li onclick="loadPage('components/bill/bill.html', 'components/bill/bill.css')"><a href="javascript:void(0)">Bill Payments</a></li>
+                    <li onclick="loadPage('components/appointment/appointment.html', 'components/appointment/appointment.css')"><a href="javascript:void(0)">Appointment Management</a></li>
+                    <li onclick="loadPage('components/reportAnalytics/report.html', 'components/reportAnalytics/report.css')"><a href="javascript:void(0)">Reports Analytics</a></li>
+                    <li onclick="loadPage('components/availability/availability.html', 'components/availability/availability.css')"><a href="javascript:void(0)">Availability Management</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn"><i class="fas fa-bars"></i>Menu</a>
+                        <div class="dropdown-content">
+                          <a href="components/profile/profile.html"><i class="fas fa-info-circle"></i>Profile</a>
+                          <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                          <a href="../Create-Login-Folder/login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                      </li>
+                      
+                </ul>
+            </div>
+        </nav>
+
+ 
+        <!-- Mobile content -->
+
+        <div class="mobile-content">
+            
+            <div class="menu-bar">
+                
+                <div class="icons">
+                   <a href="#"><i class="fa fa-bell"></i></a>
+                   <a href="#"><i class="fa fa-cog"></i></a>
+                   <a href="#"><i id="bar" class="fa fa-bars"></i></a> 
+                   
+                   <div class="menu-items" >
+                       <div class="icons">
+                           <a href="#"><i class="fas fa-calendar-check"></i><span>Appointment Management</span></a>
+                           <a href="#"><i class="fas fa-chart-bar"></i><span>Report Analytics</span></a>
+                           <a href="#"><i class="fas fa-clock"></i>Availability Management</a>
+                           <a href="../user-auth/LoginBoth/login.html"><i class="fa fa-sign-out"></i> <span>Logout</span></a>
+                       </div>
+                  </div>
+
+               </div>    
+            </div>
+            
+            
+            <div class="mobile-nav">
+                <ul>
+                <li onclick="loadPage('components/dashboard/dashboard.html', 'components/dashboard/dashboard.css')"><a href="javascript:void(0)"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+                <li onclick="loadPage('components/patient/patient.html', 'components/patient/patient.css')"><a href="javascript:void(0)"><i class="fas fa-file-medical-alt"></i>Patient Records</a></li>
+                <li onclick="loadPage('components/bill/bill.html', 'components/bill/bill.css')"><a href="javascript:void(0)"><i class="fas fa-file-invoice-dollar"></i>Bill Payments</a></li>
+                <li onclick="loadPage('components/profile/profile.html', 'components/profile/profile.css')"><a href="javascript:void(0)"><i class="fas fa-user"></i>Profile</a></li>
+                </ul>
+            </div>
+            
+
+        </div>
+
+
+
+
+        
+        <div class="content">
+
+            <!-- Info Panel-->
+
+            <div class="info-panel">
+
+                  <!-- Inspirational stories Card -->
+            <div class="card">
+                <img src="Images/inspirational Stories.png" alt="Inspirational-stories" class="card-image">
+                <h3>Inspirational Stories</h3>
+                <p>Read inspiring patient recovery stories and doctor achievements that highlight courage, 
+                    resilience, and the power of exceptional care.</p>
+                <button id="isButton" onclick="location.href='#'">Read Stories</button>
+             </div>
+
+                
+                <!-- Events & Webinars Card -->
+                <div class="card">
+                    <img src="Images/Events Webinar.png" alt="Event Webinar" class="card-image">
+                    <h3>Events & Webinars</h3>
+                    <p>Stay updated with upcoming medical conferences, training sessions,
+                         and webinars to enhance your knowledge and skills.</p>
+                    <button id="ewButton" onclick="location.href='#'">View Events</button>
+                </div>
+
+                <!-- Regulatory Updates Card -->
+                <div class="card">
+                    <img src="Images/Updates.png" alt="Regulatory Updates" class="card-image">
+                    <h3>Regulatory Updates</h3>
+                    <p>Stay informed about the latest healthcare regulations, policy changes
+                        , and compliance requirements that impact your practice.</p>
+                    <button id="ruButton" onclick="location.href='#'">View Updates</button>
+                </div>
+                
+                
+                
+                
+            </div>
+            
+
+
+
+
+
+
+        
+    </div>
+
+
+<script src="clinicScript.js"></script>    
+</body>
+</html>

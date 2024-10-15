@@ -1,0 +1,122 @@
+ 
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.authentication {
+    height: 100vh;
+    background: url('authBG.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.authentication::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
+}
+
+.authentication-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+    font-weight: bolder;
+    padding: 8px;
+    /* border-radius: 30px; */
+    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  */
+}
+
+
+.authentication-content p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    /* padding: 3px; */
+    /* border-radius: 25px; */
+    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  */
+}
+
+
+.logo img {
+    width: 140px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+    border-radius: 50%;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#create-button {
+    background: #009688;
+    color: #fff;  
+    padding: 15px 45px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+#create-button:hover {
+    background: linear-gradient(90deg, rgba(114, 197, 98, 0.8), rgba(63, 240, 28, 1));
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+#login-button {
+    background: #FF7F50;
+    padding: 15px 45px;
+    color: #fff;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+#login-button:hover {
+    background: linear-gradient(90deg, rgba(240, 28, 28, 0.8), rgba(240, 28, 63, 1));
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+

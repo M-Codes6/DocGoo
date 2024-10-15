@@ -1,0 +1,431 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;  
+    overflow-y: scroll;
+}
+
+
+/* main container styling */
+
+.clinic-ui-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: relative; 
+    overflow-y: auto; 
+    padding-top: 70px;
+}
+
+
+.clinic-ui-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1; 
+}
+
+/* nav-bar styling */
+
+nav {
+    background: linear-gradient(to bottom, rgb(152, 224, 160), rgb(150, 180, 220));
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1.5);
+    position: fixed; 
+    top: 0; 
+    width: 100vw; 
+    z-index: 1000; 
+}
+
+.nav-bar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.nav-bar ul li {
+    list-style: none;
+}
+
+.nav-bar a {
+    color: #000;
+    text-decoration: none;
+    padding: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar a:hover {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 1)); 
+    color: #ff6347;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+
+.nav-bar a.active {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 1)); 
+    color: #ff6347;
+}
+
+.nav-bar a i {
+    margin-right: 5px;
+}
+
+main {
+    padding-top: 60px;
+}
+
+.logo {
+    margin-right: 20px; 
+}
+
+.logo-img {
+    height: 70px; 
+    width: auto; 
+}
+
+
+
+/* Content Container Styling */
+
+.content {
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    margin-top: 60px;
+    background: url(Images/clinicalBg.png) no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+
+
+/* Info-panel */
+
+.info-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 120px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin: 15px 0;
+}
+
+.card p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.card button {
+    background-color: #008CBA;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 10px;
+}
+
+.card button:hover {
+    background-color: #005f73;
+}
+
+.card button:focus {
+    outline: none; 
+}
+
+
+/* Hide scrollbar in WebKit browsers */
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+/* Hide scrollbar in Firefox */
+* {
+    scrollbar-width: none;
+}
+
+
+
+
+/* Dropdown container */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1001; 
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 200px; 
+    box-sizing: border-box; 
+    padding: 5px 0;
+}
+
+.dropdown-content a {
+    padding: 12px 15px; 
+    color: #333; 
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+
+
+
+/* Base styles for the mobile navigation */
+
+.mobile-content {
+    display: none; 
+    width: 100%;  
+}
+
+@media (max-width: 1024px) {
+
+    nav {
+        display: none;
+    }
+
+    .mobile-content {
+        display: block;
+        width: 100%;
+    }
+
+    .menu-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0; 
+        right: 0; 
+        padding: 10px 20px; 
+        width: 100%;
+        background: #98d6c4;
+        z-index: 1000;
+    }
+    
+    
+    .icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        gap: 50px;
+        margin-left: 30px;
+    }
+
+    .menu-items {
+        display: none;
+        position: absolute;
+        width: 220px; 
+        background-color: #ffffff; 
+        border: 1px solid #ddd; 
+        border-radius: 8px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        top: 50px;
+        right: 0;
+        z-index: 1100;
+        padding: 10px 0;
+      }
+
+    .menu-items .icons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .menu-items .icons a {
+        display: flex;
+        align-items: center; 
+        justify-content: flex-start;
+        padding: 10px 15px;
+        color: #333; 
+        text-decoration: none; 
+        border-radius: 6px; 
+        font-size: 16px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        width: 100%;
+    }
+    
+    .menu-items .icons a:hover {
+        background-color: #f0f0f0;
+        color: #007bff;
+    }
+    
+    .menu-items .icons i {
+        margin-right: 12px; 
+        font-size: 20px;
+        color: #007bff;
+        min-width: 24px; 
+        text-align: center; 
+       
+    }
+
+    .menu-items .icons a span {
+        font-size: 14px; 
+        font-weight: 500;
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    .menu-items .icons a:hover i {
+        color: #0056b3;
+    }
+    
+    .menu-items .icons a:last-child {
+        margin-top: 15px; 
+        border-top: 1px solid #ddd;
+        padding-top: 15px; 
+    }
+  
+    .mobile-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 15px;
+        width: 100%;
+        background: #90dac5;
+        border-radius: 30px 30px 0 0;
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3), 
+                0 -6px 20px rgba(0, 0, 0, 0.3); 
+       z-index: 1000;
+    }
+
+    .mobile-nav ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+        gap: 8px;
+    }
+
+    .mobile-nav li {
+        text-align: center;
+    }
+
+    .mobile-nav a {
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        text-decoration: none; 
+        color: #333; 
+        padding: 10px; 
+        font-size: 14px; 
+    }
+
+    .mobile-nav i {
+        font-size: 28px; 
+        margin-bottom: 5px; 
+        color: #333; 
+    }
+
+    .mobile-nav a:hover {
+        color: #ff8800; 
+    }
+    
+    .mobile-nav a:hover i {
+        color: #ff8800; 
+    }
+
+    .info-panel {
+        display: none;
+    }
+
+
+}
+
+

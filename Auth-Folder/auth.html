@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocGoo Authentication</title>
+    <link rel="icon" href="favicon.jpg">
+    <link rel="stylesheet" href="auth.css">
+    
+</head>
+<body>
+
+    <section class="authentication">
+        <div class="authentication-content">
+
+            <h1>Welcome back to DocGoo!</h1>
+            <p>Manage your appointments or book a visit from the comfort of your home.</p>
+            <p>Choose an option below to get started:</p>
+
+            <div class="logo">
+                <img src="docGoo-Logo.png" alt="App Logo">
+            </div>
+            <div class="button-container">
+            <button id="create-button"  onclick="window.location.href='../Auth-Folder/auth.html?user=clinical'">Create</button>
+            <button id="login-button"  onclick="window.location.href='../Auth-Folder/auth.html?user=patient'">Login</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="auth.js" ></script>
+    
+</body>
+</html>

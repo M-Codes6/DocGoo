@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocGoo - Patient Panel</title>
+    <link rel="icon" href="favicon.jpg">
+    <link rel="stylesheet" href="patientStyle.css">
+    <!-- <link rel="stylesheet" href="components/profileP/profileP.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+
+    <div class="patient-ui-container">
+
+        <nav>
+            <div class="nav-bar">
+                <ul>
+                    <li class="logo">
+                        <img src="docGoo-Logo.png" alt="Logo" class="logo-img">
+                    </li>
+                    <li>
+                        <form class="search-form">
+                        <input type="text" placeholder="Find a Doctor">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </li>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">My Appointments</a></li>
+                    <li><a href="">Emergency</a></li>
+                    <li><a href="">Book Appointmnets</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Notifications</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn"><i class="fas fa-user"></i> Profile</a>
+                        <div class="dropdown-content">
+                          <a href="#"><i class="fas fa-info-circle"></i> Personal Info</a>
+                          <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                          <a href="#"><i class="fas fa-question-circle"></i> Support / Help</a>
+                          <a href="../user-auth/LoginBoth/login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                      </li>
+                      
+                </ul>
+            </div>
+        </nav>
+
+
+        <!-- Mobile conten -->
+
+        <div class="mobile-content">
+            
+            <div class="menu-bar">
+
+               <div class="mobile-search">
+                <form class="search-form">
+                    <input type="text" placeholder="Find a Doctor">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+               </div>
+                
+               <div class="icons">
+                   <a href="#"><i class="fa fa-bell"></i></a>
+                   <a href="#"><i class="fa fa-bars"></i></a> 
+                   
+                   <div class="menu-items">
+                    <div class="icons">
+                    <a href="#"><i class="fa fa-calendar"></i> <span>My Appointments</span></a>
+                    <a href="#"><i class="fa fa-concierge-bell"></i> <span>Services</span></a>
+                    <a href="#"><i class="fa fa-question-circle"></i> <span>Support / Help</span></a>
+                    <a href="#"><i class="fa fa-user"></i><span>Personal Info</span></a>
+                    <a href="#"><i class="fa fa-cog"></i><span>Settings</span></a>
+                    <a href="../user-auth/LoginBoth/login.html"><i class="fa fa-sign-out"></i> <span>Logout</span></a>
+                    </div>
+                  </div>
+
+               </div>    
+            </div>
+            
+            
+            <div class="mobile-nav">
+               
+             <ul>
+                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="#"><i class="fa fa-exclamation-triangle"></i>Emergency</a></li>
+                <li><a href="#"><i class="fa fa-calendar-check"></i>Book Appoinments</a></li>
+                <!-- <li onclick="loadPage('components/profileP/profileP.html', 'components/profileP/profileP.css')">
+                    <a href="javascript:void(0)"><i class="fas fa-user"></i> Profile</a>
+                </li> -->
+                <li><a href="components/profileP/profileP.html"><i class="fas fa-user"></i>Profile</a></li>
+
+            </ul>
+            </div>
+            
+
+        </div>
+
+
+        <div class="content">
+
+            
+            
+            
+            <!-- Info Panel-->
+            
+            <div class="info-panel">
+                
+                <div class="welcome-banner">
+                    <h2> Welcome back !</h2>
+                </div>
+                
+    
+                <!-- Quick Stats Section -->
+                <div class="quick-stats">
+                   <a href=""><img src="../Patient-Ui/images/Health-tip.png" alt="health-img"><div class="stat-item">Health Tip</div></a>
+                    <a href=""><img src="../Patient-Ui/images/Recent-records.png" alt="record-img"><div class="stat-item">Recent Records</div></a>
+                    <a href=""><img src="../Patient-Ui/images/Daily-health.png" alt="daily-img"><div class="stat-item">Daily Health Goal</div></a>
+                </div>
+
+                <!-- Wellness Challenges Card -->
+                <div class="card">
+                    <img src="../Patient-Ui/images/Welness-img.png" alt="Wellness Challenges" class="card-image">
+                    <h3>Wellness Challenges</h3>
+                    <p>Join daily or monthly wellness challenges to stay fit and healthy.</p>
+                    <button id="joinChallengeButton" onclick="location.href='#'">Join a Challenge</button>
+                </div>
+                
+                <!-- Healthy Recipes Card -->
+                <div class="card">
+                    <img src="../Patient-Ui/images/Recipe-img.png" alt="Healthy Recipes" class="card-image">
+                    <h3>Healthy Recipes</h3>
+                    <p>Discover nutritious and delicious recipes to try at home.</p>
+                    <button id="exploreRecipeButton" onclick="location.href='#'">Explore Recipes</button>
+                </div>
+                
+                <!-- Mental Health Check-In Card -->
+                <div class="card">
+                    <img src="../Patient-Ui/images/Mentalhealth-img.png" alt="Mental Health" class="card-image">
+                    <h3>Mental Health Check-In</h3>
+                    <p>Take a moment to check in on your mental well-being.</p>
+                    <button id="checkInButton" onclick="location.href='#'">Check-In Now</button>
+                </div>
+                
+                <!-- Symptoms Checker Card -->
+                <div class="card">
+                    <img src="../Patient-Ui/images/Symptom-img.png" alt="Symptoms Checker" class="card-image">
+                    <h3>Symptoms Checker</h3>
+                    <p>Find out more about your symptoms and when to seek help.</p>
+                    <button id="symptomButton" onclick="location.href='#'">Check Symptoms</button>
+                </div>
+                
+                <!-- Health Journal Card -->
+                <div class="card">
+                    <img src="../Patient-Ui/images/Healthjournal-img.png" alt="Health Journal" class="card-image">
+                    <h3>Health Journal</h3>
+                    <p>Keep a daily log of your health, mood, and activities.</p>
+                    <button id="writingButton" onclick="location.href='#'">Start Writing</button>
+                </div>
+                
+                <!-- Rewards or Badges Card -->
+                <div class="card">
+                    <img src="../Patient-Ui/images/Reward-img.png" alt="Rewards and Badges" class="card-image">
+                    <h3>Rewards or Badges</h3>
+                    <p>Earn rewards and badges for completing health goals.</p>
+                    <button id="achievementsButton" onclick="location.href='#'">View Your Achievements</button>
+                </div>
+            </div>
+            
+            
+
+        
+        </div>
+
+    <script src="patientScript.js"></script>
+</body>
+</html>

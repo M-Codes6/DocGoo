@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocGoo | Register as Patient</title>
+    <link rel="icon" href="favicon.jpg">
+    <link rel="stylesheet" href="patientStyle.css">
+
+
+
+</head>
+    <body>
+
+        <div class="container">
+            <div class="box">
+
+                <form id="patient-register-form">
+                    <label for="name">Name<span class="required">*</span></label>
+                    <input type="text" id="patient-name" name="name" placeholder="Enter here" required>
+    
+                    <label for="address">Address<span class="required">*</span></label>
+                    <input type="text" id="patient-address" name="address" placeholder="Enter here" required>
+    
+                    <label for="email">Email Address<span class="required">*</span></label>
+                    <input type="email" id="patient-email" name="email" placeholder="Enter here" required>
+    
+                    <label for="number">Phone no.<span class="required">*</span></label>
+                    <input type="number" id="patient-phone" name="number" placeholder="Enter here" required>
+                    
+                    <label for="password">Create Password<span class="required">*</span></label>
+                    <span>
+                    <input type="password" id="patient-password" name="password" placeholder="Enter here" required>                
+                    <input type="checkbox" id="showPassword">
+                    </span>
+    
+                    <button type="submit" id="create-account">Create Account</button>
+                    <a href="../LoginBoth/login.html"><button type="button">Log in</button></a>
+                </form>
+                
+            </div>
+        </div>
+
+
+<script src="patientScript.js"></script>
+
+
+    </body>
+    </html>

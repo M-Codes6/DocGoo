@@ -40,6 +40,9 @@ document.getElementById('patient-register-form').addEventListener('submit', asyn
   }
 
   alert('Patient account created successfully!');
+  
+  // Clear form fields after successful registration
+  document.getElementById('patient-register-form').reset();
 
   // Redirect to login page after successful registration
   window.location.href = '../LoginBoth/login.html';

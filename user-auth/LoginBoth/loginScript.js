@@ -10,12 +10,12 @@ document.getElementById('login-form').addEventListener('submit', async function 
     const password = document.getElementById('login-password').value.trim();
 
     // Handle login with Supabase authentication
-    const { error } = await supabase.auth.signIn({
+    const { user, error } = await supabase.auth.signIn({
         email: emailOrPhone,
         password: password,
     });
 
-    if (error) {
+    if (error || !user) {
         alert('Invalid email/phone number or password.');
         return;
     }
@@ -24,14 +24,14 @@ document.getElementById('login-form').addEventListener('submit', async function 
     const { data: clinicData, error: clinicError } = await supabase
         .from('clinics')
         .select('*')
-        .or(`email.eq.${emailOrPhone},number.eq.${emailOrPhone}`)
+        .or(`email.eq.${emailOrPhone},phone.eq.${emailOrPhone}`)
         .single();
 
     if (clinicError || !clinicData) {
         const { data: patientData, error: patientError } = await supabase
             .from('patients')
             .select('*')
-            .or(`email.eq.${emailOrPhone},number.eq.${emailOrPhone}`)
+            .or(`email.eq.${emailOrPhone},phone.eq.${emailOrPhone}`)
             .single();
 
         if (patientError || !patientData) {

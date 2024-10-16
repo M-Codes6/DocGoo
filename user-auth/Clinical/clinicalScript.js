@@ -41,6 +41,9 @@ document.getElementById('clinic-register-form').addEventListener('submit', async
 
   alert('Clinic account created successfully!');
   
+  // Clear form fields after successful registration
+  document.getElementById('clinic-register-form').reset();
+
   // Redirect to login page after successful registration
   window.location.href = '../LoginBoth/login.html';
 });

@@ -1,5 +1,5 @@
 // Import the Supabase client
-import { supabase } from '../supabaseClient.js';
+import { supabase } from '../supabaseClient';
 
 // Handle patient form submission
 document.getElementById('patient-register-form').addEventListener('submit', async function (e) {
@@ -18,34 +18,40 @@ document.getElementById('patient-register-form').addEventListener('submit', asyn
     return;
   }
 
-  // Register patient with Supabase authentication (create a user)
-  const { user, error } = await supabase.auth.signUp({
-    email: patientEmail,
-    password: patientPassword,
-  });
+  try {
+    // Register patient with Supabase authentication (create a user)
+    const { data: user, error: authError } = await supabase.auth.signUp({
+      email: patientEmail,
+      password: patientPassword,
+    });
 
-  if (error) {
-    alert('Error creating patient account: ' + error.message);
-    return;
+    if (authError) {
+      alert('Error creating patient account: ' + authError.message);
+      return;
+    }
+
+    // Insert additional patient details into the 'patients' table
+    const { data: patientData, error: patientError } = await supabase
+      .from('patients')
+      .insert([{ name: patientName, address: patientAddress, email: patientEmail, phone: patientPhone }]);
+
+    if (patientError) {
+      alert('Error saving patient details: ' + patientError.message);
+      return;
+    }
+
+    alert('Patient account created successfully!');
+
+    // Clear form fields after successful registration
+    document.getElementById('patient-register-form').reset();
+
+    // Redirect to login page after successful registration
+    window.location.href = '../LoginBoth/login.html';
+
+  } catch (error) {
+    console.error('Unexpected error:', error);
+    alert('An unexpected error occurred. Please try again later.');
   }
-
-  // Insert additional patient details into the 'patients' table
-  const { data, error: patientError } = await supabase
-    .from('patients')
-    .insert([{ name: patientName, address: patientAddress, email: patientEmail, phone: patientPhone }]);
-
-  if (patientError) {
-    alert('Error saving patient details: ' + patientError.message);
-    return;
-  }
-
-  alert('Patient account created successfully!');
-  
-  // Clear form fields after successful registration
-  document.getElementById('patient-register-form').reset();
-
-  // Redirect to login page after successful registration
-  window.location.href = '../LoginBoth/login.html';
 });
 
 // Password show/hide functionality

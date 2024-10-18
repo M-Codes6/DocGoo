@@ -1,5 +1,5 @@
 // Import the Supabase client
-import { supabase } from '../supabaseClient.js';
+import { supabase } from '../supabaseClient';
 
 // Handle login form submission
 document.getElementById('login-form').addEventListener('submit', async function (event) {
@@ -8,6 +8,12 @@ document.getElementById('login-form').addEventListener('submit', async function 
     // Collect login data
     const emailOrPhone = document.getElementById('login-email').value.trim();
     const password = document.getElementById('login-password').value.trim();
+
+    // Validate input fields
+    if (!emailOrPhone || !password) {
+        alert('Please enter both email/phone number and password.');
+        return;
+    }
 
     // Handle login with Supabase authentication
     const { user, error } = await supabase.auth.signIn({

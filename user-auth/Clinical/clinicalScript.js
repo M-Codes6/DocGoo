@@ -1,5 +1,5 @@
 // Import the Supabase client
-import { supabase } from '../supabaseClient.js';
+import { supabase } from '../supabaseClient'; 
 
 // Handle form submission
 document.getElementById('clinic-register-form').addEventListener('submit', async function (e) {
@@ -18,34 +18,40 @@ document.getElementById('clinic-register-form').addEventListener('submit', async
     return;
   }
 
-  // Register clinic with Supabase authentication (create a user)
-  const { user, error } = await supabase.auth.signUp({
-    email: clinicEmail,
-    password: clinicPassword,
-  });
+  try {
+    // Register clinic with Supabase authentication (create a user)
+    const { data: authData, error: authError } = await supabase.auth.signUp({
+      email: clinicEmail,
+      password: clinicPassword,
+    });
 
-  if (error) {
-    alert('Error creating clinic account: ' + error.message);
-    return;
+    if (authError) {
+      alert('Error creating clinic account: ' + authError.message);
+      return;
+    }
+
+    // Insert additional clinic details into the 'clinics' table
+    const { data, error: clinicError } = await supabase
+      .from('clinics')
+      .insert([{ name: clinicName, address: clinicAddress, email: clinicEmail, phone: clinicPhone }]);
+
+    if (clinicError) {
+      alert('Error saving clinic details: ' + clinicError.message);
+      return;
+    }
+
+    alert('Clinic account created successfully!');
+
+    // Clear form fields after successful registration
+    document.getElementById('clinic-register-form').reset();
+
+    // Redirect to login page after successful registration
+    window.location.href = '../LoginBoth/login.html';
+
+  } catch (error) {
+    console.error('Unexpected error:', error);
+    alert('An unexpected error occurred. Please try again later.');
   }
-
-  // Insert additional clinic details into the 'clinics' table
-  const { data, error: clinicError } = await supabase
-    .from('clinics')
-    .insert([{ name: clinicName, address: clinicAddress, email: clinicEmail, phone: clinicPhone }]);
-
-  if (clinicError) {
-    alert('Error saving clinic details: ' + clinicError.message);
-    return;
-  }
-
-  alert('Clinic account created successfully!');
-  
-  // Clear form fields after successful registration
-  document.getElementById('clinic-register-form').reset();
-
-  // Redirect to login page after successful registration
-  window.location.href = '../LoginBoth/login.html';
 });
 
 // Password show/hide functionality
